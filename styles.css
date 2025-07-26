@@ -163,6 +163,39 @@ body {
         inset 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
+.clear{
+    width: 100%;
+    padding: 17px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg ,#6d7bf3, #4a56d2 );
+    color:white;
+    box-shadow: 0 8px 20px rgba(77, 91, 242, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow:hidden;
+    letter-spacing: 0.5px ;
+}
+
+.clear:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 25px rgba(77, 91, 242, 0.4),
+        inset 0 0 1px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, #7a85f5, #5a65e0);
+}
+
+.clear:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 4px 10px rgba(77, 91, 242, 0.3),
+        inset 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
 .result-container {
     background: rgba(22, 25, 38, 0.7);
     border-radius: 18px;
