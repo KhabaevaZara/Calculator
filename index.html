@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Современный калькулятор</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Калькулятор</h1>
+        <input class="form-control" placeholder="Первое число" id="input1">
+        <input class="form-control" placeholder="Второе число" id="input2">
+
+        <div class="buttons">
+            <button class="operation-btn" id="plus">+</button>
+            <button class="operation-btn" id="minus">-</button>
+        </div>
+
+        <button class="submit" id="submit">Вычислить</button>
+        <div class="result-container">
+            <h4 class="result-title">Результат</h4>
+            <p id="result" class="result-number"></p>
+        </div>
+    </div>
+   
+    <script>
+        const resultElement = document.getElementById('result')
+        const input1 = document.getElementById('input1')
+        const input2 = document.getElementById('input2')
+        const submitBtn = document.getElementById('submit')
+        const plusBtn = document.getElementById('plus')
+        const minusBtn = document.getElementById('minus')
+        let action = '+'
+        
+        // Выбор операции
+        plusBtn.onclick = function() {
+            action = '+'
+            plusBtn.classList.add('active')
+            minusBtn.classList.remove('active')
+        }
+        
+        minusBtn.onclick = function() {
+            action = '-'
+            minusBtn.classList.add('active')
+            plusBtn.classList.remove('active')
+        }
+        
+        // Вычисление
+        submitBtn.onclick = function() {
+            if(input1.value === '' || input2.value === '') {
+                resultElement.textContent = 'Введите оба числа!'
+                resultElement.classList.add('error')
+                resultElement.classList.add('result-pulse')
+                setTimeout(() => resultElement.classList.remove('result-pulse'), 500)
+                return
+            }
+            
+            const num1 = parseFloat(input1.value)
+            const num2 = parseFloat(input2.value)
+            
+            if(isNaN(num1) || isNaN(num2)) {
+                resultElement.textContent = 'Ошибка: введите числа'
+                resultElement.classList.add('error')
+                resultElement.classList.add('result-pulse')
+                setTimeout(() => resultElement.classList.remove('result-pulse'), 500)
+                return
+            }
+            
+            let result
+            if(action === '+') {
+                result = num1 + num2
+            } else {
+                result = num1 - num2
+            }
+            
+            resultElement.textContent = result
+            resultElement.classList.remove('error')
+            resultElement.classList.add('result-pulse')
+            setTimeout(() => resultElement.classList.remove('result-pulse'), 500)
+            
+            // Анимация контейнера
+            document.querySelector('.container').style.transform = 'translateY(-5px)'
+            setTimeout(() => {
+                document.querySelector('.container').style.transform = 'translateY(0)'
+            }, 300)
+        }
+        
+        // Инициализация при загрузке
+        window.onload = function() {
+            plusBtn.classList.add('active')
+        }
+    </script>
+</body>
+</html>
