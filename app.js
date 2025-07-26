@@ -9,14 +9,12 @@ let action = '+'
 // Выбор операции
 plusBtn.onclick = function() {
     action = '+'
-    plusBtn.classList.add('active')
-    minusBtn.classList.remove('active')
+   console.log('+')
 }
 
 minusBtn.onclick = function() {
     action = '-'
-    minusBtn.classList.add('active')
-    plusBtn.classList.remove('active')
+    console.log('-')
 }
 
 // Вычисление
