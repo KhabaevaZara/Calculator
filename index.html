@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Современный калькулятор</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-       
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <div class="container">
+
         <h1 class="title">Калькулятор</h1>
         <input class="form-control" placeholder="Первое число" id="input1">
         <input class="form-control" placeholder="Второе число" id="input2">
 
         <div class="buttons">
-            <button class="operation-btn" id="plus">+</button>
-            <button class="operation-btn" id="minus">-</button>
+            <button class="plus" id="plus">+</button>
+            <button class="minus" id="minus">-</button>
         </div>
 
         <button class="submit" id="submit">Вычислить</button>
@@ -25,10 +25,7 @@
             <h4 class="result-title">Результат</h4>
             <p id="result" class="result-number"></p>
         </div>
+        
     </div>
-   
-    <script>
-       
-    </script>
 </body>
 </html>
