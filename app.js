@@ -61,3 +61,9 @@ submitBtn.onclick = function() {
 window.onload = function() {
     plusBtn.classList.add('active')
 }
+
+
+
+ let num = 'dick'
+
+ console.dir(num)
